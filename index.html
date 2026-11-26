@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>[Seu Nome] · Portfólio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=VT323&family=Silkscreen:wght@400;700&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ===================== ÁREA DE TRABALHO ===================== -->
+  <main class="desktop" id="desktop">
+
+    <!-- Ícones: o atributo data-window diz qual janela cada ícone abre -->
+    <nav class="icons" aria-label="Ícones da área de trabalho">
+      <button class="icon" data-window="win-projetos">
+        <svg width="48" height="40" viewBox="0 0 48 40" aria-hidden="true"><path d="M2 6h16l4 5h24v27H2z" fill="#ffd34d" stroke="#000" stroke-width="2"/></svg>
+        <span>Projetos</span>
+      </button>
+      <button class="icon" data-window="win-curriculo">
+        <svg width="40" height="46" viewBox="0 0 40 46" aria-hidden="true"><path d="M2 2h26l10 10v32H2z" fill="#fff" stroke="#000" stroke-width="2"/><path d="M8 18h24M8 25h24M8 32h16" stroke="#000" stroke-width="2"/></svg>
+        <span>curriculo.txt</span>
+      </button>
+      <button class="icon" data-window="win-terminal">
+        <svg width="48" height="40" viewBox="0 0 48 40" aria-hidden="true"><rect x="2" y="2" width="44" height="30" fill="#000" stroke="#000" stroke-width="2"/><path d="M8 10l6 5-6 5M18 21h10" stroke="#3dff7a" stroke-width="2.5" fill="none"/><path d="M16 32h16v6H16z" fill="#c0c0c0" stroke="#000" stroke-width="2"/></svg>
+        <span>terminal</span>
+      </button>
+      <button class="icon" data-window="win-contato">
+        <svg width="48" height="38" viewBox="0 0 48 38" aria-hidden="true"><rect x="2" y="2" width="44" height="34" fill="#fff" stroke="#000" stroke-width="2"/><path d="M2 2l22 18L46 2" fill="none" stroke="#000" stroke-width="2"/></svg>
+        <span>Contato</span>
+      </button>
+      <button class="icon" data-window="win-sobre">
+        <svg width="44" height="44" viewBox="0 0 44 44" aria-hidden="true"><rect x="2" y="2" width="40" height="40" fill="#c0c0c0" stroke="#000" stroke-width="2"/><circle cx="22" cy="17" r="7" fill="#fff" stroke="#000" stroke-width="2"/><path d="M9 38c2-8 8-11 13-11s11 3 13 11" fill="#fff" stroke="#000" stroke-width="2"/></svg>
+        <span>sobre_mim.exe</span>
+      </button>
+    </nav>
+
+    <!-- ===================== JANELA: SOBRE MIM (aberta) ===================== -->
+    <section class="window" id="win-sobre" style="left: 200px; top: 50px; width: 720px;">
+      <header class="title-bar">
+        <span class="title">sobre_mim.exe</span>
+        <div class="title-buttons">
+          <button class="btn-min" aria-label="Minimizar">_</button>
+          <button class="btn-close" aria-label="Fechar">x</button>
+        </div>
+      </header>
+      <div class="window-body">
+        <h1 class="hello">Olá! Eu sou<br>[Seu Nome].</h1>
+        <p>Desenvolvedor full stack com foco em back-end. Faço APIs, bancos de dados e integrações que funcionam desde a primeira vez (ou quase).</p>
+        <div class="actions">
+          <button class="btn95" data-window="win-projetos">Ver projetos</button>
+          <button class="btn95" data-window="win-curriculo">Ver currículo</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== JANELA: TERMINAL (aberta) ===================== -->
+    <section class="window" id="win-terminal" style="left: 820px; top: 360px; width: 520px;">
+      <header class="title-bar">
+        <span class="title">stack.bat</span>
+        <div class="title-buttons">
+          <button class="btn-min" aria-label="Minimizar">_</button>
+          <button class="btn-close" aria-label="Fechar">x</button>
+        </div>
+      </header>
+      <div class="terminal">
+        <div class="terminal-output" id="terminal-output">
+          <div>C:\&gt; dir stack</div>
+          <div>NODE.JS     JAVA     PYTHON</div>
+          <div>POSTGRES    REDIS    DOCKER</div>
+          <div>AWS         REACT</div>
+          <div>Digite "help" para ver os comandos.</div>
+        </div>
+        <form class="terminal-line" id="terminal-form">
+          <label for="terminal-input">C:\&gt;</label>
+          <input id="terminal-input" type="text" autocomplete="off" spellcheck="false">
+        </form>
+      </div>
+    </section>
+
+    <!-- ===================== JANELA: PROJETOS (fechada) ===================== -->
+    <section class="window hidden" id="win-projetos" style="left: 260px; top: 90px; width: 760px;">
+      <header class="title-bar">
+        <span class="title">C:\Projetos</span>
+        <div class="title-buttons">
+          <button class="btn-min" aria-label="Minimizar">_</button>
+          <button class="btn-close" aria-label="Fechar">x</button>
+        </div>
+      </header>
+      <div class="window-body">
+        <p class="muted">3 objeto(s) · projetos de exemplo: troque pelos seus</p>
+        <article class="project">
+          <h2>API de pagamentos</h2>
+          <p>API REST para cobranças por Pix e cartão, com webhooks e fila de reprocessamento.</p>
+          <p class="tags">Node.js · PostgreSQL · RabbitMQ · Docker</p>
+          <a href="https://github.com/" target="_blank" rel="noopener">&gt; ver código</a>
+        </article>
+        <article class="project">
+          <h2>Sistema de agendamentos</h2>
+          <p>Plataforma para clínicas marcarem consultas, com lembretes automáticos.</p>
+          <p class="tags">Java · Spring Boot · React · MySQL</p>
+          <a href="https://github.com/" target="_blank" rel="noopener">&gt; ver código</a>
+        </article>
+        <article class="project">
+          <h2>Encurtador de links com métricas</h2>
+          <p>Encurta URLs e mostra os cliques de cada link por dia.</p>
+          <p class="tags">Python · FastAPI · Redis · AWS</p>
+          <a href="https://github.com/" target="_blank" rel="noopener">&gt; ver código</a>
+        </article>
+      </div>
+    </section>
+
+    <!-- ===================== JANELA: CURRÍCULO (fechada) ===================== -->
+    <section class="window hidden" id="win-curriculo" style="left: 320px; top: 120px; width: 640px;">
+      <header class="title-bar">
+        <span class="title">curriculo.txt - Bloco de notas</span>
+        <div class="title-buttons">
+          <button class="btn-min" aria-label="Minimizar">_</button>
+          <button class="btn-close" aria-label="Fechar">x</button>
+        </div>
+      </header>
+      <div class="notepad">
+<pre>[SEU NOME]
+Desenvolvedor Full Stack · foco em back-end
+[Sua cidade] · [voce@email.com]
+
+EXPERIÊNCIA
+-----------
+[2024 - atual]  Dev Back-end · [Empresa]
+  APIs, integrações e performance de banco.
+
+[2022 - 2024]   Dev Full Stack · [Empresa]
+  Funcionalidades de ponta a ponta e testes.
+
+FORMAÇÃO
+--------
+[Curso] · [Instituição] · [Ano]</pre>
+      </div>
+    </section>
+
+    <!-- ===================== JANELA: CONTATO (fechada) ===================== -->
+    <section class="window hidden" id="win-contato" style="left: 400px; top: 160px; width: 520px;">
+      <header class="title-bar">
+        <span class="title">Nova mensagem</span>
+        <div class="title-buttons">
+          <button class="btn-min" aria-label="Minimizar">_</button>
+          <button class="btn-close" aria-label="Fechar">x</button>
+        </div>
+      </header>
+      <form class="window-body contact-form" id="contact-form">
+        <label for="c-nome">Seu nome</label>
+        <input class="field95" id="c-nome" name="nome" type="text">
+        <label for="c-email">Seu e-mail</label>
+        <input class="field95" id="c-email" name="email" type="email">
+        <label for="c-msg">Mensagem</label>
+        <textarea class="field95" id="c-msg" name="mensagem" rows="5"></textarea>
+        <p class="form-status" id="form-status" aria-live="polite"></p>
+        <button class="btn95" type="submit">Enviar</button>
+      </form>
+    </section>
+
+  </main>
+
+  <!-- ===================== MENU INICIAR (fechado) ===================== -->
+  <div class="start-menu hidden" id="start-menu">
+    <div class="start-side">[SEU NOME] 95</div>
+    <ul>
+      <li><button data-window="win-sobre">Sobre mim</button></li>
+      <li><button data-window="win-projetos">Projetos</button></li>
+      <li><button data-window="win-curriculo">Currículo</button></li>
+      <li><button data-window="win-terminal">Terminal</button></li>
+      <li><button data-window="win-contato">Contato</button></li>
+      <li class="sep"></li>
+      <li><a href="https://github.com/" target="_blank" rel="noopener">GitHub</a></li>
+      <li><a href="https://www.linkedin.com/" target="_blank" rel="noopener">LinkedIn</a></li>
+    </ul>
+  </div>
+
+  <!-- ===================== BARRA DE TAREFAS ===================== -->
+  <footer class="taskbar">
+    <button class="start-btn" id="start-btn">Iniciar</button>
+    <div class="task-apps" id="task-apps">
+      <button class="task-btn active" data-window="win-sobre">sobre_mim.exe</button>
+      <button class="task-btn" data-window="win-terminal">stack.bat</button>
+    </div>
+    <span class="clock" id="clock">00:00</span>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
