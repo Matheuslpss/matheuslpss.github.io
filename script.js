@@ -1,8 +1,7 @@
 // ============================================================
 // PORTFÓLIO RETRÔ · JavaScript
 // Esse arquivo começa vazio de propósito: é aqui que VOCÊ programa.
-//
-// Missões (faça uma de cada vez, na ordem):
+//  
 //  1. Relógio da barra de tarefas
 //  2. Abrir janelas (ícones, botões e menu)
 //  3. Fechar e minimizar janelas
@@ -14,4 +13,19 @@
 //
 // Dica: os elementos que você vai precisar já têm id ou classe no index.html.
 // ============================================================
-
+const clock =document.querySelector ("#clock");
+function updateClock() {
+    const now = new Date();
+    let hours = now.getHours();
+    if (hours<10){
+       hours = "0" + hours;
+    }
+    let minutes = now.getMinutes();
+    if (minutes<10){
+        minutes = "0" + minutes;
+    }
+    const time = `${hours}:${minutes}`;
+    clock.textContent = time;
+}
+updateClock();
+setInterval(updateClock, 1000);
