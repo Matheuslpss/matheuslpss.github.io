@@ -14,11 +14,15 @@
 // Dica: os elementos que você vai precisar já têm id ou classe no index.html.
 // ============================================================
 const clock =document.querySelector ("#clock");
-const now = new Date();
-const hours = now.getHours();
-let minutes = now.getMinutes();
-if (minutes<10){
-    minutes = "0" + minutes;
+function updateClock() {
+    const now = new Date();
+    const hours = now.getHours();
+    let minutes = now.getMinutes();
+    if (minutes<10){
+        minutes = "0" + minutes;
+    }
+    const time = `${hours}:${minutes}`;
+    clock.textContent = time;
 }
-const time = `${hours}:${minutes}`;
-clock.textContent = time;
+updateClock();
+setInterval(updateClock, 1000);
