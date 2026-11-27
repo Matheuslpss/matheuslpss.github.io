@@ -16,7 +16,10 @@
 const clock =document.querySelector ("#clock");
 function updateClock() {
     const now = new Date();
-    const hours = now.getHours();
+    let hours = now.getHours();
+    if (hours<10){
+       hours = "0" + hours;
+    }
     let minutes = now.getMinutes();
     if (minutes<10){
         minutes = "0" + minutes;
