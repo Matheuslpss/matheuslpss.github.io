@@ -16,6 +16,9 @@
 const clock =document.querySelector ("#clock");
 const now = new Date();
 const hours = now.getHours();
-const minutes = now.getMinutes();
+let minutes = now.getMinutes();
+if (minutes<10){
+    minutes = "0" + minutes;
+}
 const time = `${hours}:${minutes}`;
 clock.textContent = time;
